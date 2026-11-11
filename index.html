@@ -4,8 +4,38 @@
 <meta charset="utf-8">
 <meta name="apple-itunes-app" content="app-id=6828111784">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Shelf Curator: Book Collection — a cozy TBR bookshelf you curate</title>
+<title>Shelf Curator: a cozy virtual bookshelf app for iPhone</title>
 <meta name="description" content="Shelf Curator: a cozy bookshelf to curate your book collection and TBR. Real covers, named rows, books that lean, slide and tumble when you tilt your phone. Add any book by search, barcode or photo, name your rows, put your shelf on your Home Screen.">
+<link rel="canonical" href="https://aureliendotpro.github.io/shelf-curator/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Shelf Curator">
+<meta property="og:title" content="Shelf Curator: a cozy virtual bookshelf app for iPhone">
+<meta property="og:description" content="Curate a real-looking bookshelf of the books you own and the ones you can't wait to read. Real covers, named rows, books that lean when you tilt your phone.">
+<meta property="og:url" content="https://aureliendotpro.github.io/shelf-curator/">
+<meta property="og:image" content="https://aureliendotpro.github.io/shelf-curator/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A cozy walnut bookshelf full of books, with the Shelf Curator app on an iPhone">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#14100C">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "Shelf Curator: Book Collection",
+  "alternateName": "Shelf Curator",
+  "operatingSystem": "iOS 17 or later",
+  "applicationCategory": "LifestyleApplication",
+  "description": "A cozy virtual bookshelf for iPhone: add books by search, barcode or photo, name your rows, decorate your shelves, and watch books lean when you tilt your phone. Home Screen widgets included.",
+  "url": "https://aureliendotpro.github.io/shelf-curator/",
+  "downloadUrl": "https://apps.apple.com/app/id6828111784",
+  "installUrl": "https://apps.apple.com/app/id6828111784",
+  "image": "https://aureliendotpro.github.io/shelf-curator/assets/og-image.jpg",
+  "screenshot": "https://aureliendotpro.github.io/shelf-curator/assets/screenshots/01-hero.jpg",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free download. Yearly or weekly subscription, each with a 7-day free trial for new subscribers."},
+  "publisher": {"@type": "Organization", "name": "Breakbits apps"}
+}
+</script>
 <link rel="icon" href="assets/icon.png">
 <link rel="apple-touch-icon" href="assets/icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,9 +48,13 @@ a { color: #E8B877; text-decoration: none; }
 a:hover { color: #FFFFFF; }
 .cta:hover { background: #FFCC70 !important; }
 img { max-width: 100%; }
+.hero-art img { display:block; width:100%; height:auto; -webkit-mask-image:linear-gradient(to bottom, #000 62%, transparent 100%); mask-image:linear-gradient(to bottom, #000 62%, transparent 100%); }
+.hero-content { position:relative; margin-top:calc(-1 * clamp(64px, 12vw, 240px)); }
+.guide-card { display:flex; flex-direction:column; gap:10px; padding:26px; border-radius:16px; background:#1E1711; border:1px solid #2E2219; color:#F4ECE1; transition:border-color .2s, transform .2s; }
+.guide-card:hover { color:#F4ECE1; border-color:#6B4A2C; transform:translateY(-2px); }
 [hidden] { display: none !important; }
 @media (max-width: 640px) {
-  header { padding: 64px 20px 72px !important; }
+  header .hero-content { padding: 0 20px 72px !important; margin-top: -24vw; }
   section { padding-left: 20px !important; padding-right: 20px !important; }
   h1.hero { font-size: 38px !important; }
 }
@@ -32,8 +66,14 @@ img { max-width: 100%; }
 <!-- ===================== HOME / MARKETING PAGE ===================== -->
 <div id="page-home">
 
-  <header style="background:linear-gradient(165deg, #7A4A1E 0%, #14100C 135%); padding:96px 32px 104px">
-    <div style="max-width:1080px; margin:0 auto; display:flex; flex-direction:column; gap:40px">
+  <header style="background:#14100C">
+    <picture class="hero-art">
+      <source media="(max-width: 700px)" type="image/webp" srcset="assets/banner-shelf-mobile.webp">
+      <source media="(max-width: 700px)" srcset="assets/banner-shelf-mobile.jpg">
+      <source type="image/webp" srcset="assets/banner-shelf.webp">
+      <img src="assets/banner-shelf.jpg" alt="A cozy walnut bookshelf with named rows, books leaning, and the Shelf Curator app on an iPhone" width="2000" height="857" fetchpriority="high">
+    </picture>
+    <div class="hero-content" style="max-width:1080px; margin-left:auto; margin-right:auto; padding:0 32px 104px; display:flex; flex-direction:column; gap:40px">
       <div style="display:flex; align-items:center; gap:22px">
         <img src="assets/icon.png" alt="Shelf Curator app icon" style="width:96px; height:96px; display:block; border-radius:22px">
         <div style="display:flex; flex-direction:column; gap:6px">
@@ -106,10 +146,25 @@ img { max-width: 100%; }
     </div>
   </section>
 
+  <section id="guides" style="padding:0 32px 96px; background:#14100C">
+    <div style="max-width:1080px; margin:0 auto; display:flex; flex-direction:column; gap:28px">
+      <div style="font-family:'IBM Plex Mono', ui-monospace, monospace; font-size:13px; letter-spacing:0.16em; color:#E8A64B">GUIDES FOR BOOK LOVERS</div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:20px">
+        <a class="guide-card" href="blog/best-bookshelf-apps-iphone.html"><span style="font-size:20px; font-weight:600; line-height:1.3">The best bookshelf apps for iPhone in 2026</span><span style="font-size:16px; line-height:1.5; color:#BFAE98">Goodreads, StoryGraph, Libib, BookBuddy and more: which one fits how you read.</span></a>
+        <a class="guide-card" href="blog/goodreads-vs-storygraph-vs-shelf-curator.html"><span style="font-size:20px; font-weight:600; line-height:1.3">Goodreads vs StoryGraph vs Shelf Curator</span><span style="font-size:16px; line-height:1.5; color:#BFAE98">A tracker, a stats nerd's dream, and a cozy shelf. An honest comparison.</span></a>
+        <a class="guide-card" href="blog/how-to-organize-your-tbr.html"><span style="font-size:20px; font-weight:600; line-height:1.3">How to organize your TBR pile</span><span style="font-size:16px; line-height:1.5; color:#BFAE98">10 shelf ideas that make you actually want to read what you own.</span></a>
+        <a class="guide-card" href="blog/catalog-your-home-library-with-iphone.html"><span style="font-size:20px; font-weight:600; line-height:1.3">Catalog your home library with your iPhone</span><span style="font-size:16px; line-height:1.5; color:#BFAE98">Barcode, cover photo or search: the fastest way to get every book in.</span></a>
+        <a class="guide-card" href="blog/bookshelf-widget-iphone-home-screen.html"><span style="font-size:20px; font-weight:600; line-height:1.3">Put a bookshelf on your iPhone Home Screen</span><span style="font-size:16px; line-height:1.5; color:#BFAE98">A step-by-step guide to a cozy bookshelf widget.</span></a>
+      </div>
+      <a href="blog/" style="align-self:flex-start; font-family:'IBM Plex Mono', ui-monospace, monospace; font-size:13px; letter-spacing:0.12em">ALL GUIDES →</a>
+    </div>
+  </section>
+
   <footer style="padding:40px 32px 64px; background:#14100C; border-top:1px solid #2E2219">
     <div style="max-width:1080px; margin:0 auto; display:flex; flex-wrap:wrap; gap:28px; align-items:center; justify-content:space-between; font-size:15px; color:#9A8670">
       <div>© 2026 Breakbits apps</div>
       <div style="display:flex; gap:24px; flex-wrap:wrap">
+        <a href="blog/">Guides</a>
         <a href="#privacy">Privacy Policy</a>
         <a href="#terms">Terms of Use</a>
         <a href="#support">Contact / Support</a>
